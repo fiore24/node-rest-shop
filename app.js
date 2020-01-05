@@ -11,6 +11,7 @@ const orderRoutes = require('./api/routes/orders');
 mongoose.connect('mongodb+srv://node-shop:'+ process.env.MONGO_ATLAS_PW +'@node-rest-shop-je9aq.mongodb.net/test?retryWrites=true&w=majority',
     {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
